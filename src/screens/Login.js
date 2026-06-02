@@ -10,7 +10,7 @@ function Login(props) {
     useEffect(() => {
         auth.onAuthStateChanged(user => {
             if (user) {
-                props.navigation.navigate("Home");
+                props.navigation.navigate("HomeMenu");
             }
         });
     }, []);
@@ -18,7 +18,7 @@ function Login(props) {
     function onSubmit () {
         auth.signInWithEmailAndPassword(email, password)
             .then(response => {
-                props.navigation.navigate("Home");
+                props.navigation.navigate("HomeMenu");
             })
             .catch(error => {
                 setError(error.message);
@@ -41,7 +41,7 @@ function Login(props) {
             <TextInput
                 style={styles.input}
                 keyboardType="default"
-                placeholder="Contraseña"
+                placeholder="Password"
                 secureTextEntry={true}
                 onChangeText={text => setPassword(text)}
                 value={password}
