@@ -1,6 +1,6 @@
-import React, {useEffect, useState} from "react";
-import {Text, View, FlatList, ActivityIndicator, StyleSheet} from "react-native";
-import {auth, db} from "../firebase/config";
+import React, { useEffect, useState } from "react";
+import { Text, View, FlatList, ActivityIndicator, StyleSheet } from "react-native";
+import { auth, db } from "../firebase/config";
 import PostCard from "../components/PostCard";
 
 function HomePage(props) {
@@ -12,19 +12,19 @@ function HomePage(props) {
             if (user) {
                 db.collection("posts")
                     .orderBy("createdAt", "desc")
-                    .onSnapshot(doc => {
+                    .onSnapshot(docs => {
                         let postsArray = [];
 
-                        docs.forEach (doc => {
+                        docs.forEach(doc => {
                             postsArray.push({
                                 id: doc.id,
                                 data: doc.data()
                             });
-                        })
-                    });
+                        });
 
-                    setPosts(postsArray);
-                    setLoading(false);
+                        setPosts(postsArray);
+                        setLoading(false);
+                    });
             } else {
                 props.navigation.navigate("Login");
             }
@@ -57,4 +57,6 @@ function HomePage(props) {
 
 const styles = StyleSheet.create({
     
-})
+});
+
+export default HomePage;
