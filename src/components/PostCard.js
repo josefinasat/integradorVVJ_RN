@@ -1,5 +1,5 @@
 import React from "react";
-import {Text, View, Image, Pressable, Stylesheet} from "react-native";
+import {Text, View, Image, Pressable, StyleSheet} from "react-native";
 import {auth, db} from "../firebase/config";
 import firebase from "firebase";
 
@@ -48,7 +48,9 @@ function PostCard(props) {
 }
 
 const styles = StyleSheet.create({
-
+comment: {
+        fontSize: 20,
+    },
 })
 
 export default PostCard;
