@@ -10,8 +10,18 @@ function Register(props) {
     const [register, setRegister] = useState(false);
     const [registerError, setRegisterError] = useState('');
 
+    function validar(){
+        if (!email || !password || !username) {
+            setRegisterError('Todos los campos son obligatorios');
+            return false;
+        }
+        return true;
+    }
+
     function onSubmit() {
         console.log('Register', { email, username });
+
+        if (!validar()) return;
 
         auth.createUserWithEmailAndPassword(email, password)
             .then(response => {
