@@ -11,16 +11,46 @@ function MyProfile(props) {
     const currentEmail = auth.currentUser.email;
 
     useEffect(() => {
-        db.collection('users').onSnapshot(
-            docs => {
+        db.collection('users')
+            .where('email', '==', auth.currentUser.email)
+            .onSnapshot(docs => {
                 let users = [];
                 docs.forEach(doc => {
-                    users.push({ 
-                        id: doc.id, 
-                        data: doc.data() });
+                    users.push({
+                        id: doc.id,
+                        data: doc.data()
+                    });
                 });
-            }
-        )
-    })
+            });
+        if (users.length > 0) {
+            setUserData(users[0].data);
+        }
+    });
+
+    useEffect(() => {
+        db.collection('posts')
+            .where('owner', '==', auth.currentUser.email)
+            .onSnapshot(docs => {
+                let posts = [];
+                docs.forEach(doc => {
+                    posts.push({
+                        id: doc.id,
+                        data: doc.data()
+                    });
+                });
+                setPosts(posts);
+                setLoading(false);
+            });
+    }, []);
+
+    function logout() {
+        auth.signOut()
+            .then(() => {
+                props.navigation.navigate('Login');
+            })
+            .catch(error => console.log(error));
+    }
+
+    
 
 }
