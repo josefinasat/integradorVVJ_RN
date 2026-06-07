@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Text, View, TextInput, Pressable, StyleSheet } from "react-native";
 import { db, auth } from '../firebase/config';
+import { FlatList } from "react-native-web";
 
 function MyProfile(props) {
 
@@ -51,6 +52,31 @@ function MyProfile(props) {
             .catch(error => console.log(error));
     }
 
-    
+    return (
+        <View>
+            <Text>My Profile</Text>
+            <View>
+                <Text>{userData.name}</Text>
+                <Text>{currentEmail}</Text>
+            </View>
+
+            <Text>My Posts</Text>
+            {loading ? (<Text>Loading...</Text>) 
+            : posts.length === 0 ? (<Text>No posts yet</Text>) : (
+                <FlatList 
+                data={posteos}
+                    keyExtractor={item => item.id}
+                    renderItem={({ item }) => (
+                        <View>
+                            <Text>{item.data.description}</Text>
+                        </View>
+                    )}
+                />
+            )}
+            <Pressable onPress={() => logout()}>
+                <Text>Log Out</Text>
+            </Pressable>
+        </View>
+    );
 
 }
