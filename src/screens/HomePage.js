@@ -38,14 +38,14 @@ function HomePage(props) {
             {
                 loading ?
                     <ActivityIndicator size="large" />
-                :
+                    :
                     <FlatList
                         style={styles.flatlist}
                         data={posts}
                         keyExtractor={item => item.id}
-                        renderItem={({ item }) => 
-                            <PostCard 
-                                post={item} 
+                        renderItem={({ item }) =>
+                            <PostCard
+                                post={item}
                                 navigation={props.navigation}
                             />
                         }
@@ -56,8 +56,21 @@ function HomePage(props) {
 }
 
 const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: "#9b9e9e",
+        padding: 20,
+    },
+
     title: {
-        fontSize: 20,
+        color: "white",
+        fontSize: 30,
+        fontWeight: "bold",
+        marginBottom: 20,
+    },
+
+    flatlist: {
+        flex: 1,
     },
 });
 

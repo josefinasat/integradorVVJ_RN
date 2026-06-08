@@ -10,14 +10,17 @@ const Tab = createBottomTabNavigator();
 
 
 function HomeMenu() {
-    return (
+  return (
     <Tab.Navigator>
-      <Tab.Screen name="Home" component={HomeStack} options ={{headerShown: false, tabBarIcon: ({color,size}) => ( <FontAwesome name="home" color={color} size={size}/>),
-    }}/>
-      <Tab.Screen name="NewPost" component={NewPost} options ={{tabBarIcon: ({color,size}) => ( <FontAwesome name="plus-square" color={color} size={size}/>),
-    }}/> 
-      <Tab.Screen name="MyProfile" component={MyProfile} options ={{tabBarIcon: ({color,size}) => ( <FontAwesome name="user" color={color} size={size}/>),
-    }}/>
+      <Tab.Screen name="Home" component={HomeStack} options={{
+        headerShown: false, tabBarIcon: ({ color, size }) => (<FontAwesome name="home" color={color} size={size} />),
+      }} />
+      <Tab.Screen name="NewPost" component={NewPost} options={{
+        headerShown: false, tabBarIcon: ({ color, size }) => (<FontAwesome name="plus-square" color={color} size={size} />),
+      }} />
+      <Tab.Screen name="MyProfile" component={MyProfile} options={{
+        headerShown: false, tabBarIcon: ({ color, size }) => (<FontAwesome name="user" color={color} size={size} />),
+      }} />
     </Tab.Navigator>
   );
 }

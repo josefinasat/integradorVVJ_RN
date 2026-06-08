@@ -8,16 +8,16 @@ const Stack = createNativeStackNavigator();
 function HomeStack() {
     return (
         <Stack.Navigator>
-            <Stack.Screen 
-                name="HomePage" 
-                component={HomePage} 
+            <Stack.Screen
+                name="HomePage"
+                component={HomePage}
                 options={{ headerShown: false }}
             />
 
-            <Stack.Screen 
-                name="Comments" 
-                component={Comments} 
-                options={{ title: "Comments" }}
+            <Stack.Screen
+                name="Comments"
+                component={Comments}
+                options={{ headerShown: false }}
             />
         </Stack.Navigator>
     );
