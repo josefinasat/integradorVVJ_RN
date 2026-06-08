@@ -48,7 +48,7 @@ function PostCard(props) {
 }
 const styles = StyleSheet.create({
     card: {
-        backgroundColor: "#f2f2f2",
+        backgroundColor: "#f5f5f0",
         padding: 15,
         borderRadius: 12,
         marginBottom: 15,
@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
     description: {
         fontSize: 16,
         marginBottom: 10,
-        color: "#333",
+        color: "#4b4646ff",
     },
 
     image: {

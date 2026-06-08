@@ -48,13 +48,13 @@ const styles = StyleSheet.create({
     },
 
     form: {
-        width: "35%",
+        width: "55%",
         alignSelf: "center",
     },
 
     title: {
-        color: "white",
-        fontSize: 30,
+        color: "#f5f5f0",
+        fontSize: 35,
         fontWeight: "bold",
         marginBottom: 40,
     },
@@ -76,7 +76,7 @@ const styles = StyleSheet.create({
     },
 
     buttonText: {
-        color: "white",
+        color: "#f5f5f0",
         textAlign: "center",
         fontWeight: "bold",
     },

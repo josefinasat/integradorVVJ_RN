@@ -58,11 +58,13 @@ function MyProfile(props) {
             <Text style={styles.title}>My Profile</Text>
             <View style={styles.infoContainer}>
                 <View style={styles.infoBox}>
-                    <Text style={styles.infoText}>Username: {userData !== null ? userData.user : ""}</Text>
+                    <Text style={styles.infoText}>Username: </Text>
+                    <Text style={styles.infoTitle}>{userData !== null ? userData.user : ""}</Text>
                 </View>
 
                 <View style={styles.infoBox}>
-                    <Text style={styles.infoText}>Email: {auth.currentUser.email}</Text>
+                    <Text style={styles.infoText}>Email: </Text>
+                    <Text style={styles.infoTitle}>{auth.currentUser.email}</Text>
                 </View>
             </View>
 
@@ -91,36 +93,45 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: "#9b9e9e",
-        padding: 35,
+        padding: 24,
     },
     title: {
-        color: "white",
-        fontSize: 30,
-        fontWeight: "bold",
-        marginBottom: 30,
+        color: "#f5f5f0",
+        fontSize: 26,
+        fontWeight: "600",
+        marginBottom: 24,
+        marginTop: 10,
     },
     infoContainer: {
         marginBottom: 10,
     },
 
     infoBox: {
-        backgroundColor: "#f2f2f2",
-        padding: 15,
-        borderRadius: 12,
-        marginBottom: 12,
-        width: "30%",
+        backgroundColor: "#f5f5f0",
+        padding: 14,
+        borderRadius: 10,
+        marginBottom: 8,
+        width: "100%", 
+        borderWidth: 1,
+        borderColor: "#ebebeb",
     },
 
     infoText: {
-        color: "#333",
-        fontSize: 16,
+        color: "#9c9c98ff",
+        fontSize: 13,
     },
+
+    infoTitle: {
+        color: "#4b4646ff",
+        fontSize: 20,
+    },
+
     subtitle: {
-        color: "white",
+        color: "#f5f5f0",
         fontSize: 26,
-        fontWeight: "bold",
         marginTop: 30,
         marginBottom: 20,
+        fontWeight: "600",
     },
 
     text: {
@@ -130,14 +141,16 @@ const styles = StyleSheet.create({
     },
 
     post: {
-        backgroundColor: "#f2f2f2",
-        padding: 15,
-        borderRadius: 12,
-        marginBottom: 12,
-        width: "30%",
+        backgroundColor: "#f5f5f0",
+        padding: 14,
+        borderRadius: 10,
+        marginBottom: 8,
+        width: "100%", 
+        borderWidth: 1,
+        borderColor: "#ebebeb",
     },
     postText: {
-        color: "#333",
+        color: "#4b4646ff",
         fontSize: 16,
     },
     button: {
@@ -146,6 +159,7 @@ const styles = StyleSheet.create({
         borderRadius: 25,
         marginTop: 25,
         width: "30%",
+        alignSelf: "center",
 
     },
 
