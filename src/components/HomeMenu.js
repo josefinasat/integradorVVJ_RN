@@ -11,7 +11,24 @@ const Tab = createBottomTabNavigator();
 
 function HomeMenu() {
   return (
-    <Tab.Navigator>
+    <Tab.Navigator
+      screenOptions={{
+        tabBarStyle: {
+          backgroundColor: "#1a1d24",
+          borderTopWidth: 1,
+          borderTopColor: "#2a2e38",
+          height: 70,
+          paddingBottom: 8,
+          paddingTop: 8,
+        },
+        tabBarActiveTintColor: "#d7ff63",
+        tabBarInactiveTintColor: "#8d9099",
+        tabBarLabelStyle: {
+          fontSize: 12,
+          fontWeight: "bold",
+        },
+      }}
+    >
       <Tab.Screen name="Home" component={HomeStack} options={{
         headerShown: false, tabBarIcon: ({ color, size }) => (<FontAwesome name="home" color={color} size={size} />),
       }} />

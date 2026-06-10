@@ -92,81 +92,84 @@ function MyProfile(props) {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: "#9b9e9e",
-        padding: 24,
+        backgroundColor: "#0f1116",
+        paddingHorizontal: 22,
+        paddingTop: 28,
     },
+
     title: {
-        color: "#f5f5f0",
-        fontSize: 26,
-        fontWeight: "600",
+        color: "#f5f5f5",
+        fontSize: 34,
+        fontWeight: "bold",
         marginBottom: 24,
-        marginTop: 10,
     },
+
     infoContainer: {
-        marginBottom: 10,
+        marginBottom: 22,
     },
 
     infoBox: {
-        backgroundColor: "#f5f5f0",
-        padding: 14,
-        borderRadius: 10,
-        marginBottom: 8,
-        width: "100%", 
+        backgroundColor: "#1a1d24",
+        padding: 18,
+        borderRadius: 22,
+        marginBottom: 14,
         borderWidth: 1,
-        borderColor: "#ebebeb",
+        borderColor: "#2a2e38",
     },
 
     infoText: {
-        color: "#9c9c98ff",
-        fontSize: 13,
+        color: "#b8bcc8",
+        fontSize: 14,
+        marginBottom: 6,
     },
 
     infoTitle: {
-        color: "#4b4646ff",
+        color: "#f5f5f5",
         fontSize: 20,
+        fontWeight: "bold",
     },
 
     subtitle: {
-        color: "#f5f5f0",
-        fontSize: 26,
-        marginTop: 30,
-        marginBottom: 20,
-        fontWeight: "600",
+        color: "#f5f5f5",
+        fontSize: 28,
+        fontWeight: "bold",
+        marginBottom: 16,
     },
 
     text: {
-        color: "#333",
+        color: "#b8bcc8",
         fontSize: 16,
-        marginBottom: 10,
+        marginBottom: 18,
     },
 
     post: {
-        backgroundColor: "#f5f5f0",
-        padding: 14,
-        borderRadius: 10,
-        marginBottom: 8,
-        width: "100%", 
+        backgroundColor: "#1a1d24",
+        padding: 16,
+        borderRadius: 18,
+        marginBottom: 12,
         borderWidth: 1,
-        borderColor: "#ebebeb",
+        borderColor: "#2a2e38",
     },
-    postText: {
-        color: "#4b4646ff",
-        fontSize: 16,
-    },
-    button: {
-        backgroundColor: "black",
-        padding: 15,
-        borderRadius: 25,
-        marginTop: 25,
-        width: "30%",
-        alignSelf: "center",
 
+    postText: {
+        color: "#b8bcc8",
+        fontSize: 15,
+        lineHeight: 21,
+    },
+
+    button: {
+        backgroundColor: "#d7ff63",
+        paddingVertical: 14,
+        borderRadius: 18,
+        marginTop: 10,
+        marginBottom: 18,
     },
 
     buttonText: {
-        color: "white",
+        color: "#0f1116",
         textAlign: "center",
         fontWeight: "bold",
+        fontSize: 16,
     },
 });
 

@@ -77,68 +77,76 @@ function Comments(props) {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: "#9b9e9e",
-        padding: 35,
-        alignItems: "center",
+        backgroundColor: "#0f1116",
+        paddingHorizontal: 22,
+        paddingTop: 25,
+    },
+
+    backButton: {
+        alignSelf: "flex-start",
+        marginBottom: 20,
+    },
+
+    back: {
+        color: "#d7ff63",
+        borderWidth: 1,
+        borderColor: "#d7ff63",
+        paddingVertical: 8,
+        paddingHorizontal: 14,
+        borderRadius: 18,
+        fontWeight: "bold",
     },
 
     title: {
-        color: "white",
-        fontSize: 30,
+        color: "#f5f5f5",
+        fontSize: 34,
         fontWeight: "bold",
-        marginTop: 50,
-        marginBottom: 30,
-        width: 400,
+        marginBottom: 24,
     },
 
     input: {
-        borderBottomWidth: 1,
-        borderBottomColor: "white",
-        color: "white",
-        padding: 8,
-        marginBottom: 25,
-        width: 400,
+        backgroundColor: "#232733",
+        color: "#f5f5f5",
+        borderRadius: 16,
+        padding: 14,
+        marginBottom: 14,
+        fontSize: 15,
     },
 
     button: {
-        backgroundColor: "black",
-        padding: 15,
-        borderRadius: 25,
-        marginBottom: 25,
-        width: 400,
+        backgroundColor: "#d7ff63",
+        paddingVertical: 14,
+        borderRadius: 18,
+        marginBottom: 24,
     },
 
     buttonText: {
-        color: "white",
+        color: "#0f1116",
         textAlign: "center",
         fontWeight: "bold",
+        fontSize: 16,
     },
+
+    commentCard: {
+        backgroundColor: "#1a1d24",
+        padding: 16,
+        borderRadius: 20,
+        marginBottom: 14,
+        borderWidth: 1,
+        borderColor: "#2a2e38",
+    },
+
     owner: {
-        color: "#333",
+        color: "#f5f5f5",
         fontWeight: "bold",
+        fontSize: 14,
         marginBottom: 8,
     },
-    back: {
-        color: "white",
-        backgroundColor: "black",
-        padding: 8,
-        borderRadius: 25,
-        fontWeight: "bold",
-    },
-    backButton: {
-        alignSelf: "flex-start",
-        marginBottom: 25,
-    },
-    commentCard: {
-        backgroundColor: "#f2f2f2",
-        padding: 15,
-        borderRadius: 10,
-        marginBottom: 15,
-        width: 400,
-    },
+
     commentText: {
-        color: "#333",
-        fontSize: 16,
+        color: "#b8bcc8",
+        fontSize: 15,
+        lineHeight: 21,
     },
 });
 export default Comments;

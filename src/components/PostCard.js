@@ -32,7 +32,7 @@ function PostCard(props) {
             {
                 props.post.data.likes.includes(auth.currentUser.email) ?
                     <Pressable onPress={() => dislikePost()}>
-                        <Text style={styles.like}>Dislike</Text>
+                        <Text style={styles.like}>Like</Text>
                     </Pressable>
                     :
                     <Pressable onPress={() => likePost()}>
@@ -48,54 +48,75 @@ function PostCard(props) {
 }
 const styles = StyleSheet.create({
     card: {
-        backgroundColor: "#f5f5f0",
-        padding: 15,
-        borderRadius: 12,
-        marginBottom: 15,
-        width: "95%",
-
+        backgroundColor: "#1a1d24",
+        padding: 16,
+        borderRadius: 24,
+        marginBottom: 16,
+        width: "100%",
+        borderWidth: 1,
+        borderColor: "#2a2e38",
     },
 
     user: {
+        color: "#f5f5f5",
         fontWeight: "bold",
         fontSize: 15,
         marginBottom: 8,
-        color: "#333",
     },
 
     description: {
-        fontSize: 16,
-        marginBottom: 10,
-        color: "#4b4646ff",
+        color: "#b8bcc8",
+        fontSize: 15,
+        marginBottom: 14,
+        lineHeight: 21,
     },
 
     image: {
         width: "100%",
-        height: 200,
-        marginBottom: 10,
+        height: 220,
+        borderRadius: 18,
+        marginBottom: 14,
+    },
+
+    actions: {
+        flexDirection: "row",
+        justifyContent: "space-between",
+        alignItems: "center",
+        marginBottom: 12,
     },
 
     likes: {
+        color: "#d9dde7",
         fontSize: 14,
-        marginBottom: 8,
-        color: "#333",
+    },
+
+    likeButton: {
+        backgroundColor: "#232733",
+        paddingVertical: 8,
+        paddingHorizontal: 18,
+        borderRadius: 20,
     },
 
     like: {
-        fontSize: 15,
+        color: "#d7ff63",
+        fontSize: 14,
         fontWeight: "bold",
-        marginBottom: 10,
-        color: "#333",
+    },
+
+    commentButton: {
+        backgroundColor: "transparent",
+        paddingVertical: 12,
+        borderRadius: 18,
+        borderWidth: 1,
+        borderColor: "#d7ff63",
+        marginTop: 4,
     },
 
     comment: {
-        backgroundColor: "black",
-        color: "white",
+        color: "#d7ff63",
         textAlign: "center",
-        padding: 10,
-        borderRadius: 20,
         fontWeight: "bold",
-        marginTop: 5,
+        fontSize: 15,
     },
 });
 

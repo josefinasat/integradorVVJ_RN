@@ -69,50 +69,65 @@ function Login(props) {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: "#9b9e9e",
-        padding: 35,
+        backgroundColor: "#0f1116",
+        paddingHorizontal: 22,
         justifyContent: "center",
     },
+
     form: {
-        width: "30%",
-        alignSelf: "center",
+        width: "100%",
+        backgroundColor: "#1a1d24",
+        padding: 24,
+        borderRadius: 28,
+        borderWidth: 1,
+        borderColor: "#2a2e38",
     },
+
     title: {
-        color: "white",
-        fontSize: 30,
+        color: "#f5f5f5",
+        fontSize: 38,
         fontWeight: "bold",
-        marginBottom: 40,
+        marginBottom: 36,
+        textAlign: "center",
     },
+
     input: {
-        borderBottomWidth: 1,
-        borderBottomColor: "white",
-        color: "white",
-        marginBottom: 25,
-        padding: 8,
+        backgroundColor: "#232733",
+        color: "#f5f5f5",
+        borderRadius: 16,
+        padding: 14,
+        marginBottom: 18,
+        fontSize: 15,
     },
+
     button: {
-        backgroundColor: "black",
-        padding: 15,
-        borderRadius: 25,
-        marginTop: 20,
-        marginBottom: 25,
+        backgroundColor: "#d7ff63",
+        paddingVertical: 14,
+        borderRadius: 18,
+        marginTop: 12,
+        marginBottom: 22,
     },
 
     buttonText: {
-        color: "white",
+        color: "#0f1116",
         textAlign: "center",
         fontWeight: "bold",
+        fontSize: 16,
     },
 
     link: {
-        color: "white",
+        color: "#b8bcc8",
         textAlign: "center",
+        fontSize: 15,
+        lineHeight: 21,
     },
+
     error: {
-        color: "white",
+        color: "#ff7b7b",
         textAlign: "center",
         marginBottom: 10,
+        fontWeight: "bold",
     },
-})
+});
 
 export default Login;

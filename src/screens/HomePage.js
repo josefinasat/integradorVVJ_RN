@@ -58,19 +58,24 @@ function HomePage(props) {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: "#9b9e9e",
-        padding: 20,
+        backgroundColor: "#0f1116",
+        paddingTop: 20,
+        paddingHorizontal: 16,
     },
 
     title: {
-        color: "#f5f5f0",
-        fontSize: 30,
+        color: "#f5f5f5",
+        fontSize: 32,
         fontWeight: "bold",
-        marginBottom: 20,
+        marginBottom: 18,
     },
 
     flatlist: {
         flex: 1,
+    },
+
+    listContent: {
+        paddingBottom: 20,
     },
 });
 

@@ -18,8 +18,8 @@ function NewPost() {
                     setDescription("");
                 })
                 .catch((e) => console.log(e));
+        }
     }
-}
 
     return (
         <View style={styles.container}>
@@ -42,43 +42,52 @@ function NewPost() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: "#9b9e9e",
-        padding: 35,
+        backgroundColor: "#0f1116",
+        paddingHorizontal: 22,
         justifyContent: "center",
     },
 
     form: {
-        width: "55%",
-        alignSelf: "center",
+        width: "100%",
+        backgroundColor: "#1a1d24",
+        padding: 24,
+        borderRadius: 28,
+        borderWidth: 1,
+        borderColor: "#2a2e38",
     },
 
     title: {
-        color: "#f5f5f0",
-        fontSize: 35,
+        color: "#f5f5f5",
+        fontSize: 34,
         fontWeight: "bold",
-        marginBottom: 40,
+        marginBottom: 28,
+        textAlign: "center",
     },
 
     input: {
-        borderBottomWidth: 1,
-        borderBottomColor: "white",
-        color: "white",
-        marginBottom: 25,
-        padding: 8,
+        backgroundColor: "#232733",
+        color: "#f5f5f5",
+        borderRadius: 18,
+        padding: 14,
+        marginBottom: 20,
+        fontSize: 15,
+        height: 130,
+        textAlignVertical: "top",
     },
 
     button: {
-        backgroundColor: "black",
-        padding: 15,
-        borderRadius: 25,
-        marginTop: 20,
-        marginBottom: 25,
+        backgroundColor: "#d7ff63",
+        paddingVertical: 14,
+        borderRadius: 18,
+        marginTop: 8,
     },
 
     buttonText: {
-        color: "#f5f5f0",
+        color: "#0f1116",
         textAlign: "center",
         fontWeight: "bold",
+        fontSize: 16,
     },
 });
+
 export default NewPost;
