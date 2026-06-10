@@ -45,7 +45,7 @@ function Comments(props) {
     return (
         <View style={styles.container}>
             <Pressable style={styles.backButton} onPress={() => props.navigation.goBack()}>
-                <Text style={styles.back}>Back to post</Text>
+                <Text style={styles.back}>Back to Home</Text>
             </Pressable>
             <Text style={styles.title}>Comments</Text>
 
