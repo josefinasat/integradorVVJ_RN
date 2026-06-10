@@ -25,14 +25,12 @@ function PostCard(props) {
             <Text style={styles.user}>{props.post.data.owner}</Text>
             <Text style={styles.description}>{props.post.data.description}</Text>
 
-            <Image style={styles.image} source={{ uri: props.post.data.image }} />
-
             <Text style={styles.likes}>Likes: {props.post.data.likes.length}</Text>
 
             {
                 props.post.data.likes.includes(auth.currentUser.email) ?
                     <Pressable onPress={() => dislikePost()}>
-                        <Text style={styles.like}>Like</Text>
+                        <Text style={styles.like}>Dislike</Text>
                     </Pressable>
                     :
                     <Pressable onPress={() => likePost()}>
