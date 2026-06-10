@@ -6,14 +6,20 @@ function Login(props) {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
         auth.onAuthStateChanged(user => {
             if (user) {
                 props.navigation.navigate("HomeMenu");
             }
+            setLoading(false);
         });
     }, []);
+
+    if (loading) {
+        return <Text>Loading...</Text>;
+    }
 
     function onSubmit() {
         if (email === "" || password === "") {
