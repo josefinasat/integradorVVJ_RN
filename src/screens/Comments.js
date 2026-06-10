@@ -31,7 +31,7 @@ function Comments(props) {
                 .add({
                     text: campo,
                     owner: auth.currentUser.email,
-                    createdAt: firebase.firestore.FieldValue.serverTimestamp()
+                    createdAt: Date.now(),
                 })
                 .then(() => {
                     setCampo("");

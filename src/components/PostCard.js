@@ -30,7 +30,7 @@ function PostCard(props) {
             {
                 props.post.data.likes.includes(auth.currentUser.email) ?
                     <Pressable onPress={() => dislikePost()}>
-                        <Text style={styles.like}>Dislike</Text>
+                        <Text style={styles.like}>Like</Text>
                     </Pressable>
                     :
                     <Pressable onPress={() => likePost()}>

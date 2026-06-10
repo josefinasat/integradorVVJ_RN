@@ -11,7 +11,6 @@ function NewPost() {
                 description: description,
                 createdAt: Date.now(),
                 likes: [],
-                image: "",
             })
                 .then(() => {
                     console.log("Post created");
