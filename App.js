@@ -5,10 +5,10 @@ import Login from "./src/screens/Login";
 import HomeMenu from "./src/components/HomeMenu";
 
 
-const Stack = createNativeStackNavigator ();
+const Stack = createNativeStackNavigator();
 export default function App() {
   return (
-      <NavigationContainer>
+    <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="Login" component={Login} options={{ headerShown: false }} />
         <Stack.Screen name="Register" component={Register} options={{ headerShown: false }} />

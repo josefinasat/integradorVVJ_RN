@@ -72,10 +72,7 @@ const styles = StyleSheet.create({
 
     flatlist: {
         flex: 1,
-    },
-
-    listContent: {
-        paddingBottom: 20,
+        width: '100%',
     },
 });
 

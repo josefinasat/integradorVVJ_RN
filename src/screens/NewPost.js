@@ -1,9 +1,29 @@
-import React, { useState } from "react";
-import { Text, View, TextInput, Pressable, StyleSheet } from "react-native";
+import React, { useState, useEffect } from "react";
+import { Text, View, TextInput, Pressable, StyleSheet, ActivityIndicator } from "react-native";
 import { db, auth } from "../firebase/config";
 
-function NewPost() {
+function NewPost(props) {
     const [description, setDescription] = useState("");
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        auth.onAuthStateChanged(user => {
+            if (user) {
+                setLoading(false);
+            } else {
+                props.navigation.navigate("Login");
+            }
+        });
+    }, []);
+
+    if (loading) {
+        return (
+            <View style={styles.loading}>
+                <ActivityIndicator size="large" color="#d7ff63" />
+            </View>
+        );
+    }
+
     function onSubmit() {
         if (description !== "") {
             db.collection("posts").add({
@@ -13,7 +33,6 @@ function NewPost() {
                 likes: [],
             })
                 .then(() => {
-                    console.log("Post created");
                     setDescription("");
                 })
                 .catch((e) => console.log(e));
@@ -86,6 +105,13 @@ const styles = StyleSheet.create({
         textAlign: "center",
         fontWeight: "bold",
         fontSize: 16,
+    },
+
+    loading: {
+        flex: 1,
+        backgroundColor: "#0f1116",
+        justifyContent: "center",
+        alignItems: "center",
     },
 });
 

@@ -33,12 +33,10 @@ function MyProfile(props) {
             .onSnapshot(docs => {
                 let postsArray = [];
                 docs.forEach(doc => {
-                    if (doc.data().description !== "") {
-                        postsArray.push({
-                            id: doc.id,
-                            data: doc.data()
-                        });
-                    }
+                    postsArray.push({
+                        id: doc.id,
+                        data: doc.data()
+                    });
                 });
                 setPosts(postsArray);
                 setLoading(false);

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Text, View, TextInput, Pressable, FlatList, StyleSheet } from "react-native";
 import { auth, db } from "../firebase/config";
-import firebase from "firebase";
 
 function Comments(props) {
     const [campo, setCampo] = useState("");
@@ -15,10 +14,15 @@ function Comments(props) {
             .collection("comments")
             .orderBy("createdAt", "desc")
             .onSnapshot(snapshot => {
-                let commentsData = snapshot.docs.map(doc => ({
-                    id: doc.id,
-                    data: doc.data()
-                }));
+                let commentsData = [];
+
+                snapshot.forEach(doc => {
+                    commentsData.push({
+                        id: doc.id,
+                        data: doc.data()
+                    });
+                });
+
                 setComments(commentsData);
             });
     }, []);
@@ -44,7 +48,7 @@ function Comments(props) {
 
     return (
         <View style={styles.container}>
-            <Pressable style={styles.backButton} onPress={() => props.navigation.goBack()}>
+            <Pressable style={styles.backButton} onPress={() => props.navigation.navigate("HomePage")}>
                 <Text style={styles.back}>Back to Home</Text>
             </Pressable>
             <Text style={styles.title}>Comments</Text>

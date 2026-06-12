@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { Text, View, TextInput, Pressable, StyleSheet } from "react-native";
+import { Text, View, TextInput, Pressable, StyleSheet, ActivityIndicator } from "react-native";
 import { auth } from "../firebase/config";
 
 function Login(props) {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         auth.onAuthStateChanged(user => {
@@ -18,7 +18,11 @@ function Login(props) {
     }, []);
 
     if (loading) {
-        return <Text>Loading...</Text>;
+        return (
+            <View style={styles.loading}>
+                <ActivityIndicator size="large" color="#d7ff63" />
+            </View>
+        );
     }
 
     function onSubmit() {
@@ -30,7 +34,7 @@ function Login(props) {
                     props.navigation.navigate("HomeMenu");
                 })
                 .catch(error => {
-                    setError("Invalid email or password");
+                    setError(error.message);
                 });
         }
     }
@@ -133,6 +137,12 @@ const styles = StyleSheet.create({
         textAlign: "center",
         marginBottom: 10,
         fontWeight: "bold",
+    },
+    loading: {
+        flex: 1,
+        backgroundColor: "#0f1116",
+        justifyContent: "center",
+        alignItems: "center",
     },
 });
 

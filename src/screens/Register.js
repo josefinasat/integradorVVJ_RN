@@ -7,39 +7,31 @@ function Register(props) {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [username, setUsername] = useState('');
-    const [register, setRegister] = useState(false);
     const [registerError, setRegisterError] = useState('');
 
-    function validar() {
+    function onSubmit() {
         if (email === "" || password === "" || username === "") {
             setRegisterError("Please complete all fields");
-            return false;
-        }
-        return true;
-    }
-
-    function onSubmit() {
-        if (!validar()) return;
-
-        auth.createUserWithEmailAndPassword(email, password)
-            .then(response => {
-                return db.collection('users').add({
-                    owner: auth.currentUser.email,
-                    user: username,
-                    email: email,
-                    createdAt: Date.now(),
-                });
-            })
-            .then(() => {
-                setRegister(true);
-                auth.signOut()
-                    .then(() => {
-                        props.navigation.navigate('Login');
+        } else {
+            auth.createUserWithEmailAndPassword(email, password)
+                .then(response => {
+                    return db.collection('users').add({
+                        owner: auth.currentUser.email,
+                        user: username,
+                        email: email,
+                        createdAt: Date.now(),
                     });
-            })
-            .catch(error => {
-                setRegisterError(error.message);
-            });
+                })
+                .then(() => {
+                    auth.signOut()
+                        .then(() => {
+                            props.navigation.navigate('Login');
+                        });
+                })
+                .catch(error => {
+                    setRegisterError(error.message);
+                });
+        }
     }
 
     return (
@@ -56,18 +48,20 @@ function Register(props) {
                 <TextInput
                     style={styles.input}
                     keyboardType='default'
-                    placeholder='Username'
-                    onChangeText={text => setUsername(text)}
-                    value={username} />
-
-                <TextInput
-                    style={styles.input}
-                    keyboardType='default'
                     placeholder='Password'
                     secureTextEntry={true}
                     onChangeText={text => setPassword(text)}
                     value={password} />
+
+                <TextInput
+                    style={styles.input}
+                    keyboardType='default'
+                    placeholder='Username'
+                    onChangeText={text => setUsername(text)}
+                    value={username} />
+
                 {registerError !== "" ? <Text style={styles.error}>{registerError}</Text> : null}
+
                 <Pressable style={styles.button} onPress={() => onSubmit()}>
                     <Text style={styles.buttonText}>Register</Text>
                 </Pressable>

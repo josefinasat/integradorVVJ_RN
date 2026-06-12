@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, View, Image, Pressable, StyleSheet } from "react-native";
+import { Text, View, Pressable, StyleSheet } from "react-native";
 import { auth, db } from "../firebase/config";
 import firebase from "firebase";
 
@@ -69,45 +69,15 @@ const styles = StyleSheet.create({
         lineHeight: 21,
     },
 
-    image: {
-        width: "100%",
-        height: 220,
-        borderRadius: 18,
-        marginBottom: 14,
-    },
-
-    actions: {
-        flexDirection: "row",
-        justifyContent: "space-between",
-        alignItems: "center",
-        marginBottom: 12,
-    },
-
     likes: {
         color: "#d9dde7",
         fontSize: 14,
-    },
-
-    likeButton: {
-        backgroundColor: "#232733",
-        paddingVertical: 8,
-        paddingHorizontal: 18,
-        borderRadius: 20,
     },
 
     like: {
         color: "#d7ff63",
         fontSize: 14,
         fontWeight: "bold",
-    },
-
-    commentButton: {
-        backgroundColor: "transparent",
-        paddingVertical: 12,
-        borderRadius: 18,
-        borderWidth: 1,
-        borderColor: "#d7ff63",
-        marginTop: 4,
     },
 
     comment: {
